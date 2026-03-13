@@ -1,4 +1,4 @@
-const db           = require('../lib/db');
+const db            = require('../lib/db');
 const { sendMessage, sendAiReply, escMd } = require('../lib/telegram');
 const { callOpenRouter } = require('../lib/openrouter');
 const PERSONALITIES = require('../lib/personalities');
@@ -13,18 +13,19 @@ module.exports = async function handler(req, res) {
     return res.status(200).json({ status: 'EnosIII Bot is running' });
   }
 
+  const update = req.body;
+
+  // Respond 200 immediately so Telegram doesn't retry
+  res.status(200).json({ status: 'ok' });
+
+  // Process AFTER responding — use setImmediate to let response flush first
+  if (!update || !update.message) return;
+
   try {
-    const update = req.body;
-    if (!update || !update.message) {
-      return res.status(200).json({ status: 'ok' });
-    }
     await handleUpdate(update);
   } catch (err) {
     console.error('Handler error:', err.message);
   }
-
-  // Respond AFTER processing is complete
-  return res.status(200).json({ status: 'ok' });
 };
 
 // ─────────────────────────────────────────────────────────────
