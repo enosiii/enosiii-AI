@@ -2,13 +2,14 @@
   "version": 2,
   "functions": {
     "api/webhook.js": {
-      "maxDuration": 30
+      "maxDuration": 60
+    },
+    "api/process.js": {
+      "maxDuration": 60
     }
   },
   "routes": [
-    {
-      "src": "/webhook",
-      "dest": "/api/webhook.js"
-    }
+    { "src": "/webhook", "dest": "/api/webhook.js" },
+    { "src": "/api/process", "dest": "/api/process.js" }
   ]
 }
