@@ -194,7 +194,7 @@ async function handleAuth(chatId, text) {
     await db.authorizeUser(chatId);
     await sendMessage(chatId, '\u2705 *Access granted\\!* Welcome, Enosiii\\!\n\nType /help to see all available commands\\.\
 \
-Your default personality is *The Generalist*\\. Use /personality to change it\.');
+\n\nYour default personality is *The Generalist*\\. Use /personality to change it\.');
   } else {
     await sendMessage(chatId, '\u274C Incorrect password\\. Please try again\\.');
   }
