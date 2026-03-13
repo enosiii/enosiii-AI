@@ -111,7 +111,7 @@ async function cmdHelp(chatId) {
 async function cmdStatus(chatId, config, userData) {
   const model      = config.ACTIVE_MODEL || 'none';
   const apiKey     = config.ACTIVE_API_KEY || '';
-  const apiPreview = apiKey ? 'sk\\-or\\-v1\\-\\*\\*\\*\\*' + escMd(apiKey.slice(-6)) : 'none';
+  const apiPreview = apiKey ? 'sk\\-or\\-v1\\-\\•\\•\\•\\•' + escMd(apiKey.slice(-6)) : 'none';
   const pKey       = userData.personality;
   const pName      = pKey ? escMd(PERSONALITIES[pKey]?.name || pKey) : 'None \\(neutral\\)';
   const history    = await db.getUserHistory(chatId);
@@ -203,7 +203,7 @@ async function cmdListApis(chatId, config) {
   const defKey = config.DEFAULT_API_KEY;
   let msg = '🔑 *Saved API Keys*\n\n';
   for (const k of keys) {
-    const preview = '\\.\\.\\.' + escMd(k.slice(-6));
+    const preview = 'sk\\-or\\-v1\\-\\•\\•\\•\\•' + escMd(k.slice(-6));
     const tag = (k === active ? ' ✅' : '') + (k === defKey ? ' 🔒' : '');
     msg += '`' + preview + '`' + escMd(tag) + '\n';
   }
@@ -217,7 +217,7 @@ async function cmdAddApi(chatId, arg, config) {
   if (keys.includes(arg)) { await sendMessage(chatId, '⚠️ API key already exists\\.'); return; }
   keys.push(arg);
   await db.setConfig('API_KEYS', JSON.stringify(keys));
-  await sendMessage(chatId, '✅ API key added: `\\.\\.\\.' + escMd(arg.slice(-6)) + '`');
+  await sendMessage(chatId, '✅ API key added: `sk\\-or\\-v1\\-\\•\\•\\•\\•' + escMd(arg.slice(-6)) + '`');
 }
 
 async function cmdRemoveApi(chatId, arg, config) {
@@ -237,7 +237,7 @@ async function cmdSetApi(chatId, arg, config) {
   const keys = JSON.parse(config.API_KEYS || '[]');
   if (!keys.includes(arg)) { await sendMessage(chatId, '❌ API key not found\\. Add it first with `/addapi`\\.'); return; }
   await db.setConfig('ACTIVE_API_KEY', arg);
-  await sendMessage(chatId, '✅ Active API key set to: `\\.\\.\\.' + escMd(arg.slice(-6)) + '`');
+  await sendMessage(chatId, '✅ Active API key set to: `sk\\-or\\-v1\\-\\•\\•\\•\\•' + escMd(arg.slice(-6)) + '`');
 }
 
 async function handleChat(chatId, userText, config, userData) {
