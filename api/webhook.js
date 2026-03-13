@@ -13,16 +13,18 @@ module.exports = async function handler(req, res) {
     return res.status(200).json({ status: 'EnosIII Bot is running' });
   }
 
-  // Respond 200 immediately — prevents Telegram retry/timeout
-  res.status(200).json({ status: 'ok' });
-
   try {
     const update = req.body;
-    if (!update || !update.message) return;
+    if (!update || !update.message) {
+      return res.status(200).json({ status: 'ok' });
+    }
     await handleUpdate(update);
   } catch (err) {
     console.error('Handler error:', err.message);
   }
+
+  // Respond AFTER processing is complete
+  return res.status(200).json({ status: 'ok' });
 };
 
 // ─────────────────────────────────────────────────────────────
