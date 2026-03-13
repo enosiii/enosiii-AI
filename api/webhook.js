@@ -6,11 +6,7 @@ module.exports = async function handler(req, res) {
   }
 
   const update = req.body;
-
-  // Fire-and-forget to process endpoint using hardcoded production URL
-  const processUrl = process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}/api/process`
-    : 'https://enosiii-ai.vercel.app/api/process';
+  const processUrl = 'https://enosiii-ai.vercel.app/api/process';
 
   console.log('Firing process to:', processUrl);
 
