@@ -217,12 +217,12 @@ async function handleCommand(chatId, text, config, userData) {
 async function cmdHelp(chatId) {
   await sendMessage(chatId,
     '\uD83D\uDCD6 *Enosiii AI Commands*\n\n' +
-    '`/personality` \\— Change AI personality\n' +
-    '`/models` \\— Manage AI models\n' +
-    '`/apis` \\— Manage API keys\n' +
-    '`/status` \\— Show current settings\n' +
-    '`/clear` \\— Clear conversation history\n' +
-    '`/cancel` \\— Cancel any pending action\n\n' +
+    '/personality \\— Change AI personality\n' +
+    '/models \\— Manage AI models\n' +
+    '/apis \\— Manage API keys\n' +
+    '/status \\— Show current settings\n' +
+    '/clear \\— Clear conversation history\n' +
+    '/cancel \\— Cancel any pending action\n\n' +
     '_Just type a message to chat with the AI\\._'
   );
 }
