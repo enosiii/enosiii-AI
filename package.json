@@ -1,0 +1,13 @@
+{
+  "name": "enosiii-bot",
+  "version": "1.0.0",
+  "description": "EnosIII Telegram Bot — Vercel + Supabase",
+  "main": "index.js",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "node-fetch": "^2.7.0"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
