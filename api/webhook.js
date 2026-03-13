@@ -192,7 +192,9 @@ async function handleAuth(chatId, text) {
   }
   if (text === process.env.BOT_PASSWORD) {
     await db.authorizeUser(chatId);
-    await sendMessage(chatId, '\u2705 *Access granted\\!* Welcome, Enosiii\\!\n\nType /help to see all available commands\\.');
+    await sendMessage(chatId, '\u2705 *Access granted\\!* Welcome, Enosiii\\!\n\nType /help to see all available commands\\.\
+\
+Your default personality is *The Generalist*\\. Use /personality to change it\.');
   } else {
     await sendMessage(chatId, '\u274C Incorrect password\\. Please try again\\.');
   }
