@@ -111,7 +111,7 @@ async function cmdHelp(chatId) {
 async function cmdStatus(chatId, config, userData) {
   const model      = config.ACTIVE_MODEL || 'none';
   const apiKey     = config.ACTIVE_API_KEY || '';
-  const apiPreview = apiKey ? '\\.\\.\\.' + escMd(apiKey.slice(-6)) : 'none';
+  const apiPreview = apiKey ? 'sk\\-or\\-v1\\-\\*\\*\\*\\*' + escMd(apiKey.slice(-6)) : 'none';
   const pKey       = userData.personality;
   const pName      = pKey ? escMd(PERSONALITIES[pKey]?.name || pKey) : 'None \\(neutral\\)';
   const history    = await db.getUserHistory(chatId);
