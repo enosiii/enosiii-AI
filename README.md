@@ -90,8 +90,8 @@ git push -u origin main
 
 | Name | Value |
 |------|-------|
-| `BOT_TOKEN` | `8729086082:AAGhkSvpSwjt39wzKIz29kxnrXpkV0pMcUw` |
-| `BOT_PASSWORD` | `daddymonAI` |
+| `BOT_TOKEN` | `yout TG bot token` |
+| `BOT_PASSWORD` | your TG Bot PW |
 | `SUPABASE_URL` | your Supabase project URL |
 | `SUPABASE_SERVICE_ROLE_KEY` | your Supabase service_role key |
 
@@ -109,7 +109,7 @@ https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook?url=https://enosiii-bot.
 
 Example:
 ```
-https://api.telegram.org/bot8729086082:AAGhkSvpSwjt39wzKIz29kxnrXpkV0pMcUw/setWebhook?url=https://enosiii-bot.vercel.app/webhook
+https://api.telegram.org/botyourTGbottoken/setWebhook?url=https://enosiii-bot.vercel.app/webhook
 ```
 
 You should see: `{"ok":true,"result":true,"description":"Webhook was set"}`
@@ -131,7 +131,7 @@ It should show your Vercel URL with `pending_update_count: 0` and NO `last_error
 
 1. Open Telegram and message your bot
 2. Send `/start`
-3. Enter the password: `daddymonAI`
+3. Enter the password: `yourTGbotPW`
 4. Send `/help` to see all commands
 5. Chat away — responses should be instant!
 
